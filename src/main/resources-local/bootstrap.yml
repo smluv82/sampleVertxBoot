@@ -1,0 +1,24 @@
+# cloud-config-server : 5001
+# cloud-eureka-server : 5002
+# cloud-gateway-server : 5003
+# sampleVertxBoot : 5997
+# sampleTest : 5998
+# sampleboot : 5999
+
+#SERVER CONFIGURATION
+server: 
+   port: ${PORT:5997}
+   servlet:
+      application-display-name: sampleVertxBoot
+      
+#SPRING CONFIGURATION
+spring:
+   application:
+      name: sampleVertxBoot
+   profiles:
+      active: local
+   cloud:
+      config:
+         #http://localhost:5001/sampleVertxBoot/local
+         uri: http://localhost:5001
+         name: sampleVertxBoot
