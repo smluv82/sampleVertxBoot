@@ -7,7 +7,7 @@
 
 #SERVER CONFIGURATION
 server: 
-   port: ${PORT:5997}
+#   port: ${PORT:5997}
    servlet:
       application-display-name: sampleVertxBoot
       

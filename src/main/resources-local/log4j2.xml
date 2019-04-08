@@ -3,6 +3,8 @@
 	<Properties>
 		<Property name="LOG_FORMAT">%d{yyyyMMdd HH:mm:ss.SSS} [%thread][%method:%line] %-5level %logger{36} - %msg %n</Property>
 		<Property name="BASE_DIR">./logs</Property>
+		<Property name="FILE_NAME"></Property>
+		<Property name="ERROR_FILE_NAME"></Property>
 	</Properties>
 
 	<Appenders>
@@ -11,8 +13,8 @@
 		</Console>
 
 		<RollingFile name="FILE"
-			fileName="${BASE_DIR}/sampleTest.log"
-			filePattern="${BASE_DIR}/sampleTest.%d{yyyy-MM-dd}_%i.log">
+			fileName="${BASE_DIR}/sampleVertxBoot.${date:yyyy-MM-dd}_0.log"
+			filePattern="${BASE_DIR}/sampleVertxBoot.%d{yyyy-MM-dd}_%i.log">
 			<PatternLayout pattern="${LOG_FORMAT}" />
 			<Policies>
 				<SizeBasedTriggeringPolicy size="100 MB" />
@@ -27,8 +29,8 @@
 		</RollingFile>
 
 		<RollingFile name="ERROR_FILE"
-			fileName="${BASE_DIR}/sampleTest-error.log"
-			filePattern="${BASE_DIR}/sampleTest-error.%d{yyyy-MM-dd}_%i.log">
+			fileName="${BASE_DIR}/sampleVertxBoot-error.log"
+			filePattern="${BASE_DIR}/sampleVertxBoot-error.%d{yyyy-MM-dd}_%i.log">
 			<PatternLayout pattern="${LOG_FORMAT}" />
 			<Policies>
 				<SizeBasedTriggeringPolicy size="100 MB" />
